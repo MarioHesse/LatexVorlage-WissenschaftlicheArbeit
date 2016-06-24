@@ -1,54 +1,57 @@
-% Hintergrund: Bachelorarbeit im Studiengang Elektro- und Informationstechnik 
-% an der Fakult‰t Elektro- und Informationstechnik an der HTWK Leipzig 
-% Stand: August 2014
-% Aus einer Vorlage von Prof. Dr. Martin Gr¸ttm¸ller (HTWK Leipzig - Fakult‰t IMN) 
-
-
-\documentclass[a4paper,12pt]{scrartcl} % Seiteneinstellung und Gliederungseinstellung
-\usepackage[latin1]{inputenc}
-\usepackage{pdfpages}					% ermˆglicht das Einbinden von PDFs
-
-\usepackage{parskip}					% setzt einen Abstand nach einem \par Absatz
-\usepackage{float}						% notwendig f¸r Gleitubgebungen z.B. Figure
-\usepackage{makeidx}					% anlegen eines automatischen Inhaltsverzeichnis
-\usepackage{amsmath,amsfonts,amsthm}	% standard Krempel
-\usepackage{tikz}						% Diagramme zeichnen
+% Dokument / Seiten
+\documentclass[12pt,a4paper]{scrartcl}
+\usepackage[utf8]{inputenc}				% Zeichencodierung
 \usepackage[ngerman]{babel}				% Sprachpaket 
-\usepackage[T1]{fontenc}				% Umlaute bei \hyphenation verwenden kˆnnen (Silbentrennung)
-\usepackage[square,numbers]{natbib}		% Literatur zitieren
-\bibliographystyle{dinat}				% Literatur und Zitate
-\usepackage{tocstyle}					% Punkte im Inhaltsverzeichnis
-\usetocstyle{allwithdot} 
-
-\setlength{\parindent}{0in} 			% Absatz, erste Zeile wird global NICHT einger¸ckt
-
-
-\usepackage{graphicx}					% erlaubt das Einbinden von Grafiken
-\usepackage{subfig}						% erlaubt das Verwenden von Subfigures
-
-
-\usepackage[headsepline]{scrpage2}		% Kopfzeile
-\usepackage[
-	    colorlinks=true,
-	    urlcolor=blue,
-	    citecolor=blue,
-	    linkcolor=black
-		]{hyperref}						% Verlinkung aller \ref,url,etc.
-
-
-\usepackage{epstopdf}					% einbinden von eps Bilddateien
-
-\usepackage{caption}					% ermˆglicht die Beschriftung von Gleitobjekten
-\usepackage{nameref}					% erlaubt Namensreferenzen
+\usepackage[T1]{fontenc}				% Umlaute bei \hyphenation verwenden k√∂nnen (Silbentrennung)
 \usepackage[onehalfspacing]{setspace}	% Setzt das Dokument auf 1,5x Zeilenabstand
-\usepackage{wasysym}					% zus‰tzliche Symbole verwenden (Checkbox)
+
+\usepackage{							% standard Krempel
+	amsmath,
+	amsfonts,
+	amsthm,
+	amssymb}
+
+% Gleitumgebungen / Grafiken
+\usepackage{float}						% notwendig f√ºr Gleitubgebungen z.B. Figure
+\usepackage{subfig}						% erlaubt das Verwenden von Subfigures
+\usepackage{graphicx}					% erlaubt das Einbinden von Grafiken
+\usepackage{pdfpages}					% erm√∂glicht das Einbinden von PDFs
+\usepackage{epstopdf}					% einbinden von eps Bilddateien
+\usepackage{longtable}					% lange Tabellen verarbeiten
+\usepackage{caption}					% erm√∂glicht die Beschriftung von Gleitobjekten
+\usepackage{nameref}					% erlaubt Namensreferenzen
+
+% Diagramme
+\usepackage{tikz}						% Zeichentool
 \usepackage{pgfplots, pgfplotstable}	% Diagramme zeichnen
-\pgfplotsset{compat = newest}			% Einstellung f¸r Diagramme
+\pgfplotsset{compat = newest}			% Einstellung f√ºr Diagramme
 \usepackage{siunitx}                    % SI-Einheiten
 \usepgfplotslibrary{units}				% Einheiten in Diagrammen plotten
 
-\usepackage{longtable}					% lange Tabellen verarbeiten
+% Verzeichnisse
+\usepackage[square,numbers]{natbib}		% Literatur zitieren
+\bibliographystyle{dinat}				% Literatur- und Zitatstyle
 
+\usepackage{makeidx}					% anlegen eines automatischen Inhaltsverzeichnis
+\usepackage{tocstyle}					% Punkte im Inhaltsverzeichnis
+\usetocstyle{allwithdot} 
+
+% Formatierungen
+\setlength{\parindent}{0in} 			% Absatz, erste Zeile wird global NICHT einger√ºckt
+\usepackage{parskip}					% setzt einen Abstand nach einem \par Absatz
+
+\usepackage[headsepline]{scrpage2}		% Kopfzeile
+
+\usepackage[							% Verlinkung aller \ref,url,etc.
+colorlinks=true,
+urlcolor=blue,
+citecolor=blue,
+linkcolor=black
+]{hyperref}								
+
+\usepackage{wasysym}					% zus√§tzliche Symbole verwenden (Checkbox)
+
+% Silbentrennung
 \expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks\do\a		% Erlaubt einen Umbruch in einer URL 
 	\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n	% an allen angegebenen Stellen
 	\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z\do\A	
@@ -56,9 +59,17 @@
 	\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z\do\1
 	\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9\do\0\do\&} 	 
 
-%\sloppy								% Nachl‰ssige Silbentrennung, Blocksatzoptimiert
+%\sloppy								% Nachl√§ssige Silbentrennung, Blocksatzoptimiert
 \hyphenation{OpenOCD}					% Worte, die NICHT oden nur auf bestimmte Weise getrennt werden sollen
 
+% Schusterjungen und Hurenkinder
+\usepackage[all]{nowidow}
+%\clubpenalty = 10000 % schliesst Schusterjungen aus
+%\widowpenalty = 10000 
+%\displaywidowpenalty = 10000% schliesst Hurenkinder aus 
+
+
+% Definition von Funktionen
 
 % \paragraph mit Zeilenumbruch versehen ---------------------------
 \makeatletter
@@ -69,233 +80,229 @@
 \makeatother
 %------------------------------------------------------------------
 
-\clubpenalty = 10000 % schliesst Schusterjungen aus
-\widowpenalty = 10000 
-\displaywidowpenalty = 10000% schliesst Hurenkinder aus 
-
 
 
 % Beginn des Dokuments --------------------------------------------
 \begin{document}
-
-\ohead{\pagemark}
-\ihead{\sectionmark}
-\cfoot{}
-\pagestyle{scrheadings}
-\renewcommand{\sectionmark}[1]{\markright{#1}{}}
-
-% Titelseite ------------------------------------------------------------------
-% Titelseite ------------------------------------------------------------------
-\begin{titlepage}
 	
-	\begin{center}
-		\includegraphics[height=4cm]{Bilder/HTWK_Logo_CMYK}
-		
-		\vspace*{3cm}
-		
-		{\sc \LARGE Ein wirklich gutes Thema\\ auf zwei Zeilen}\\
-		\vspace{1cm}
-		{\sc \Large Belegarbeit}\\
-	\end{center}
+	\ohead{\pagemark}
+	\ihead{\sectionmark}
+	\cfoot{}
+	\pagestyle{scrheadings}
+	\renewcommand{\sectionmark}[1]{\markright{#1}{}}
 	
-	\vspace{8cm}
+	% Titelseite ------------------------------------------------------------------
+	% Titelseite ------------------------------------------------------------------
+	\begin{titlepage}
+		
+		\begin{center}
+			\includegraphics[height=4cm]{Bilder/HTWK_Logo_CMYK}
+			
+			\vspace*{3cm}
+			
+			{\sc \LARGE Ein wirklich gutes Thema\\ auf zwei Zeilen}\\
+			\vspace{1cm}
+			{\sc \Large Belegarbeit}\\
+		\end{center}
+		
+		\vspace{8cm}
+		
+		\begin{tabbing}
+			\hspace{4cm}\=\kill
+			Vorgelegt von:		\> Mario Hesse \\
+			Eingereicht bei:	\> \dots \\ 
+			Im Studienfach:		\> \dots \\
+			Ort,Datum:			\> Leipzig, den \today
+		\end{tabbing} 
+		
+	\end{titlepage}
+	
+	% Sperrvermerk ------------------------------------------------------------------------
+	
+	%\thispagestyle{empty} % no page number
+	%\section*{Sperrvermerk}
+	%
+	%\medskip
+	%\noindent
+	%\emph{
+	%Die vorliegende Bachelorarbeit beinhaltet interne vertrauliche Informationen des Laboratory for Biosignal Processing (LaBP). Die Weitergabe des Inhaltes der Arbeit und eventuell beiliegender
+	%Zeichnungen und Daten im Gesamten oder in Teilen ist grunds√§tzlich untersagt. Es d√ºrfen keinerlei Kopien oder Abschriften -- auch in digitaler Form -- gefertigt werden. Ausnahmen bed√ºrfen der vorherigen schriftlichen Genehmigung des Laboratory for Biosignal Processing (LaBP).\\[1cm]
+	%Laboratory for Biosignal Processing\\
+	%Dr.-Ing. Gerold Bausch\\
+	%Eilenburger Stra√üe 13\\
+	%04317 Leipzig\\
+	%Telefon: +49 341 3076 3103 \\
+	%E-Mail: gerold.bausch@htwk-leipzig.de\\[2cm]
+	%Leipzig, den 3.Oktober 2015\\[2,5cm]
+	%\begin{tabbing}
+	%\hspace*{3cm}   \= \hspace*{6cm} \= \kill
+	% \> Gerold Bausch \> Mario Hesse \\	
+	%\end{tabbing}
+	%}
+	
+	
+	
+	
+	% Vorwort, Danksagung ------------------------------------------------------------------------
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{section}{Vorwort}
+	\section*{Vorwort}
+	
+	Pers√∂nliche Verbindung zum Thema. Grund f√ºr diesen Artikel. 
+	
+	
+	% Danksagung ------------------------------------------------------------------------------------
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{section}{Danksagung}
+	\section*{Danksagung}
+	
+	Bei gr√∂√üeren Arbeiten bedankt man sich bei Menschen und Institutionen, die Ma√ügeblich an der Entstehung teil hatten. (beim Bedanken Rangfolge beachten, wem geb√ºhrt der gr√∂√üte Dank) \\
+	
+	
+	% Kurzfassung, Abstract ------------------------------------------------------------------------
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{section}{Kurzfassung, Abstract}
+	\section*{Kurzfassung}
+	
+	Hier wird der Inhalt der Arbeit in ein paar Zeilen kurz dargestellt. Man soll auf Grund dieser Angabe entscheiden k√∂nnen, ob es lohnt die Arbeit zu lesen oder nicht.
+	
+	\medskip
+	\noindent
+	Schlagw√∂rter: √úberblick, Zusammenfassung, Einblick \\
+	
+	
+	\section*{Abstract}
+	
+	This is the same than in "Kurzfassung" just in english language. This part is used to internationalize an article. 
+	
+	\medskip
+	\noindent
+	Keywords: summary, content, overview \\
+	
+	
+	% Inhaltsverzeichnis ------------------------------------------------------------------------
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{section}{Inhaltsverzeichnis}
+	\tableofcontents
+	
+	
+	% Abbildungsverzeichnis ------------------------------------------------------------------------
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+	\listoffigures
+	
+	
+	% Tabellenverzeichnis ------------------------------------------------------------------------
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{section}{Tabellenverzeichnis}
+	\listoftables
+	
+	
+	
+	\vfill
+	% Abk√ºrzungsverzeichnis ------------------------------------------------------------------------
+	\phantomsection
+	\addcontentsline{toc}{section}{Abk√ºrzungsverzeichnis}
+	\section*{Abk√ºrzungsverzeichnis}
+	
 	
 	\begin{tabbing}
-		\hspace{4cm}\=\kill
-		Vorgelegt von:		\> Mario Hesse \\
-		Eingereicht bei:	\> \dots \\ 
-		Im Studienfach:		\> \dots \\
-		Ort,Datum:			\> Leipzig, den \today
+		\hspace{2cm}\=\kill
+		HTWK 	\> Hochschule f√ºr Technik, Wirtschaft und Kultur\\
+		k.A. 	\> keine Angabe \\
 	\end{tabbing} 
 	
-\end{titlepage}
-
-% Sperrvermerk ------------------------------------------------------------------------
-
-%\thispagestyle{empty} % no page number
-%\section*{Sperrvermerk}
-%
-%\medskip
-%\noindent
-%\emph{
-%Die vorliegende Bachelorarbeit beinhaltet interne vertrauliche Informationen des Laboratory for Biosignal Processing (LaBP). Die Weitergabe des Inhaltes der Arbeit und eventuell beiliegender
-%Zeichnungen und Daten im Gesamten oder in Teilen ist grunds‰tzlich untersagt. Es d¸rfen keinerlei Kopien oder Abschriften -- auch in digitaler Form -- gefertigt werden. Ausnahmen bed¸rfen der vorherigen schriftlichen Genehmigung des Laboratory for Biosignal Processing (LaBP).\\[1cm]
-%Laboratory for Biosignal Processing\\
-%Dr.-Ing. Gerold Bausch\\
-%Eilenburger Straﬂe 13\\
-%04317 Leipzig\\
-%Telefon: +49 341 3076 3103 \\
-%E-Mail: gerold.bausch@htwk-leipzig.de\\[2cm]
-%Leipzig, den 3.Oktober 2015\\[2,5cm]
-%\begin{tabbing}
-%\hspace*{3cm}   \= \hspace*{6cm} \= \kill
-% \> Gerold Bausch \> Mario Hesse \\	
-%\end{tabbing}
-%}
-
-
-
-
-% Vorwort, Danksagung ------------------------------------------------------------------------
-\clearpage
-\phantomsection
-\addcontentsline{toc}{section}{Vorwort}
-\section*{Vorwort}
-
-Persˆnliche Verbindung zum Thema. Grund f¸r diesen Artikel. 
+	\vfill
 	
-
-% Danksagung ------------------------------------------------------------------------------------
-\clearpage
-\phantomsection
-\addcontentsline{toc}{section}{Danksagung}
-\section*{Danksagung}
-
-Bei grˆﬂeren Arbeiten bedankt man sich bei Menschen und Institutionen, die Maﬂgeblich an der Entstehung teil hatten. (beim Bedanken Rangfolge beachten, wem geb¸hrt der grˆﬂte Dank) \\
-
-
-% Kurzfassung, Abstract ------------------------------------------------------------------------
-\clearpage
-\phantomsection
-\addcontentsline{toc}{section}{Kurzfassung, Abstract}
-\section*{Kurzfassung}
-
-Hier wird der Inhalt der Arbeit in ein paar Zeilen kurz dargestellt. Man soll auf Grund dieser Angabe entscheiden kˆnnen, ob es lohnt die Arbeit zu lesen oder nicht.
-
-\medskip
-\noindent
-Schlagwˆrter: ‹berblick, Zusammenfassung, Einblick \\
-
- 
-\section*{Abstract}
-
-This is the same than in "Kurzfassung" just in english language. This part is used to internationalize an article. 
-
-\medskip
-\noindent
-Keywords: summary, content, overview \\
-
-
-% Inhaltsverzeichnis ------------------------------------------------------------------------
-\clearpage
-\phantomsection
-\addcontentsline{toc}{section}{Inhaltsverzeichnis}
-\tableofcontents
-
-
-% Abbildungsverzeichnis ------------------------------------------------------------------------
-\clearpage
-\phantomsection
-\addcontentsline{toc}{section}{Abbildungsverzeichnis}
-\listoffigures
-
-
-% Tabellenverzeichnis ------------------------------------------------------------------------
-\clearpage
-\phantomsection
-\addcontentsline{toc}{section}{Tabellenverzeichnis}
-\listoftables
-
-
-
-\vfill
-% Abk¸rzungsverzeichnis ------------------------------------------------------------------------
-\phantomsection
-\addcontentsline{toc}{section}{Abk¸rzungsverzeichnis}
-\section*{Abk¸rzungsverzeichnis}
-
-
-\begin{tabbing}
-\hspace{2cm}\=\kill
-HTWK 	\> Hochschule f¸r Technik, Wirtschaft und Kultur\\
-k.A. 	\> keine Angabe \\
-\end{tabbing} 
-
-\vfill
-
-% Einheitenverzeichnis --------------------------------------------------------------------------
-\clearpage
-\phantomsection
-\addcontentsline{toc}{section}{Einheitenverzeichnis}
-\section*{Einheitenverzeichnis}
-
-\begin{tabbing}
-	\hspace{2cm}\=\kill	
+	% Einheitenverzeichnis --------------------------------------------------------------------------
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{section}{Einheitenverzeichnis}
+	\section*{Einheitenverzeichnis}
 	
-	$V$			\> Volt \\
-	$A$			\> Ampere \\
-	$\Omega$	\> Ohm\\
-	
-\end{tabbing} 
-
-
-% Formelverzeichnis ------------------------------------------------------------------------
-\clearpage
-\phantomsection
-\addcontentsline{toc}{section}{Formelverzeichnis}
-\section*{Formelverzeichnis}
-
-\begin{tabbing}
-	\hspace{2cm}\=\kill
-	
-	$U$					\> Spannung (allgemein)\\
-	$R$					\> Widerstand (allgemein)\\
-	$I$					\> Strom (allgemein)\\
-	
-\end{tabbing} 
-	
-
-% Glossar ---------------------------------------------------------------------------------
-\clearpage
-\phantomsection
-\addcontentsline{toc}{section}{Glossar}
-\section*{Glossar}
-
-\begin{longtable}{p{4cm}p{11cm}}
+	\begin{tabbing}
+		\hspace{2cm}\=\kill	
+		
+		$V$			\> Volt \\
+		$A$			\> Ampere \\
+		$\Omega$	\> Ohm\\
+		
+	\end{tabbing} 
 	
 	
-	Glossar			& \dots ist eine Tabelle in der Fachwˆrter f¸r die forliegenede Arbeit definiert sind.\\
-\end{longtable}
-
-\addtocounter{table}{-1}	% Die Tabelle "Glossar wird nicht mit ins Tabellenverzeichnis aufgenommen
-
-% Dokumententext ------------------------------------------------------------------------
-
-% Literatur  -----------------------------------------------------------------
-\clearpage
-\phantomsection
-\addcontentsline{toc}{section}{Literaturverzeichnis}
-\sectionmark{Literaturverzeichnis}
-\bibliography{Literatur} % nutzt Angaben in der Datei "Literatur.bib"
-
-
-% Eidesstattliche Versicherung ------------------------------------------------------------------------
-\clearpage
-\thispagestyle{empty}
-\phantomsection
-\addcontentsline{toc}{section}{Eidesstattliche Versicherung}
-\section*{Eidesstattliche Erkl‰rung}
-
-\smallskip
-Ich erkl‰re hiermit, dass ich diese Bachelorarbeit selbstst‰ndig ohne Hilfe Dritter und ohne Benutzung anderer als der angegebenen Quellen und Hilfsmittel verfasst habe. Alle den benutzten Quellen wˆrtlich oder sinngem‰ﬂ entnommenen Stellen sind als solche einzeln kenntlich gemacht.
-
-\smallskip
-\noindent
-Diese Arbeit ist bislang keiner anderen Pr¸fungsbehˆrde vorgelegt und auch nicht verˆffentlicht worden.
-
-\smallskip
-\noindent
-Ich bin mir bewusst, dass eine falsche Erkl‰rung rechtliche Folgen haben wird.
-
-\bigskip
-\noindent
-Leipzig, den 
-
-\pagestyle{empty}
-\newpage % Leerseite f¸r Notizen
-~
-
-% ***********************************************
+	% Formelverzeichnis ------------------------------------------------------------------------
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{section}{Formelverzeichnis}
+	\section*{Formelverzeichnis}
+	
+	\begin{tabbing}
+		\hspace{2cm}\=\kill
+		
+		$U$					\> Spannung (allgemein)\\
+		$R$					\> Widerstand (allgemein)\\
+		$I$					\> Strom (allgemein)\\
+		
+	\end{tabbing} 
+	
+	
+	% Glossar ---------------------------------------------------------------------------------
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{section}{Glossar}
+	\section*{Glossar}
+	
+	\begin{longtable}{p{4cm}p{11cm}}
+		
+		
+		Glossar			& \dots ist eine Tabelle in der Fachw√∂rter f√ºr die forliegenede Arbeit definiert sind.\\
+	\end{longtable}
+	
+	\addtocounter{table}{-1}	% Die Tabelle "Glossar wird nicht mit ins Tabellenverzeichnis aufgenommen
+	
+	% Dokumententext ------------------------------------------------------------------------
+	
+	% Literatur  -----------------------------------------------------------------
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{section}{Literaturverzeichnis}
+	\sectionmark{Literaturverzeichnis}
+	\bibliography{Literatur} % nutzt Angaben in der Datei "Literatur.bib"
+	
+	
+	% Eidesstattliche Versicherung ------------------------------------------------------------------------
+	\clearpage
+	\thispagestyle{empty}
+	\phantomsection
+	\addcontentsline{toc}{section}{Eidesstattliche Versicherung}
+	\section*{Eidesstattliche Erkl√§rung}
+	
+	\smallskip
+	Ich erkl√§re hiermit, dass ich diese Bachelorarbeit selbstst√§ndig ohne Hilfe Dritter und ohne Benutzung anderer als der angegebenen Quellen und Hilfsmittel verfasst habe. Alle den benutzten Quellen w√∂rtlich oder sinngem√§√ü entnommenen Stellen sind als solche einzeln kenntlich gemacht.
+	
+	\smallskip
+	\noindent
+	Diese Arbeit ist bislang keiner anderen Pr√ºfungsbeh√∂rde vorgelegt und auch nicht ver√∂ffentlicht worden.
+	
+	\smallskip
+	\noindent
+	Ich bin mir bewusst, dass eine falsche Erkl√§rung rechtliche Folgen haben wird.
+	
+	\bigskip
+	\noindent
+	Leipzig, den 
+	
+	\pagestyle{empty}
+	\newpage % Leerseite f√ºr Notizen
+	~
+	
+	% ***********************************************
 \end{document}
 % ***********************************************
 
