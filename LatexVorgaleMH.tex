@@ -1,0 +1,207 @@
+% !TeX spellcheck = de_DE
+
+%  ******************************************************************************
+%  * @file		LatexVorlageMH              									*
+%  * @author	Mario Hesse                										*
+%  * @version	v2.0.0                    										*
+%  * @date		31.01.2019                 										*
+%  * @brief		Vorlage für wissenschaftliche Arbeiten.                         *
+%  *			Erstellt von Mario Hesse		                                *
+%  *			                        		                                *
+%  *			Alle Kapitel, die Präambel, Bilder, Literatur, etc. sind in     *
+%  *            einzelnen Ordnern hinterlegt. Dadurch entsteht mehr Übersicht   *
+%  *            und Ordnung.                                                    *
+%  *			  - Präambel:   /tex/                                           *
+%  *			  - Glossar:    /tex/                                           *
+%  *			  - Kapitel:    /tex/                                           *
+%  *			  - Bilder:     /pic/                                           *
+%  *			  - Daten:      /dat/                                           *
+%  *			  - Anhang:     /app/                                           *
+%  ******************************************************************************
+
+% Hilfsdatei aufräumen - Endungen
+% log,aux,dvi,lof,lot,bit,idx,glo,bbl,bcf,ilg,toc,ind,out,blg,fdb_latexmk,fls,acn,acr,alg,glg,gls,ist,slg,syg,syi,synctex.gz,tdo
+
+
+\input{tex/preamble.tex}
+
+%\input{tex/Glossaries.tex}												% Paket Glossaries erstellt ein Glossar, Abkürzungsverzeichnisse und Formelverzeichnisse: Für Fortgeschrittene Benutzer
+
+% ***********************************************
+\begin{document}
+% ***********************************************
+	\selectlanguage{ngerman}
+	
+	\ohead{\pagemark}
+	\ihead{\sectionmark}
+	\cfoot{}
+	\pagestyle{scrheadings}
+	\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+	
+	% ToDo Liste
+	% ----------
+	\listoftodos
+	
+	% Titelseite
+	% ----------
+	\input{tex/Deckblatt.tex}
+
+	% Vorspiel --------------------------------------------------------------------------------------------------------------------------------------------
+	\pagenumbering{arabic}          
+
+	
+	
+	% Aufgabenstellung
+	% ----------------
+	\clearpage 
+	\phantomsection
+	\addcontentsline{toc}{section}{Aufgabenstellung}
+	\input{tex/Aufgabenstellung.tex}
+	
+	
+	% Sperrvermerk
+	% ------------
+	\clearpage 
+	\phantomsection
+	\addcontentsline{toc}{section}{Sperrvermerk}	 	
+	\input{tex/Sperrvermerk.tex}
+	
+	
+	% Danksagung
+	% ----------
+	\clearpage 
+	\phantomsection
+	\addcontentsline{toc}{section}{Danksagung}
+	\input{tex/Danksagung.tex}
+	
+	
+%	% Vorwort														% Optionales Kapitel
+%	% -------
+%	\clearpage 
+%	\phantomsection
+%	\addcontentsline{toc}{section}{Vorwort}
+%	\input{tex/Vorwort.tex}
+	
+	
+	% Kurzfassung und Abstract
+	% ------------------------
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{section}{Kurzfassung und Abstract}
+	\input{tex/Kurzfassung.tex}
+	
+	
+	% Verzeichnisse ----------------------------------------------------------------------------------------------------------------------------------------
+	
+	% Inhaltsverzeichnis
+	% ------------------
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{section}{Inhaltsverzeichnis}
+	\tableofcontents
+	
+	
+	% Abbildungsverzeichnis
+	% ---------------------
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+	\listoffigures
+	
+	
+	% Tabellenverzeichnis
+	% -------------------
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{section}{Tabellenverzeichnis}
+	\listoftables
+	
+	
+%	% Glossarie Verzeichnisse										% Paket Glossaries erstellt ein Glossar, Abkürzungsverzeichnisse und Formelverzeichnisse: Für Fortgeschrittene Benutzer
+%	% -----------------------
+%	% Glossar ausgeben
+%	\clearpage
+%	\printglossary[style=altlist,title=Glossar]
+%	
+%	% Abkürzungen ausgeben
+%	\clearpage
+%	\printglossary[type=\acronymtype,title=Abkürzungsverzeichnis,style=long]
+%	
+%	% Symbole ausgeben
+%	\clearpage
+%	\printglossary[type=symbolslist,style=long]
+	
+	
+	
+	
+	% Dokumententext --------------------------------------------------------------------------------------------------------------------------------------
+	\setcounter{table}{0}											% Tabellenzähler wird auf 0 gesetzt (Falls vorher schon eine Tabelle genutzt wurde)
+	
+	
+	% Einleitung
+	% ----------
+	\clearpage
+	\pagenumbering{arabic}                                                             
+	\input{tex/Einleitung.tex}
+	
+	% Grundlagen
+	% ----------
+	\clearpage
+	\input{tex/Grundlagen.tex}
+	
+	% Stand der Technik
+	% -----------------
+	\clearpage
+	\input{tex/StandDerTechnik.tex}
+	
+	
+	% Hardware
+	% --------
+	\clearpage
+	\input{tex/Hardware.tex}
+	
+	% Firmware/Software
+	% -----------------
+	\clearpage
+	\input{tex/Firmware.tex}
+	
+	% Modultest/Messungen
+	% -------------------
+	\clearpage
+	\input{tex/Modultest.tex}
+	
+	% Diskussion
+	% ----------
+	\clearpage
+	\input{tex/Diskussion.tex}
+	
+	
+	% Abspann ----------------------------------------------------------------------------------------------------------------------------------------------
+	
+	
+	% Literatur
+	% ---------
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{section}{Literaturverzeichnis}
+	\sectionmark{Literaturverzeichnis}
+	\renewcommand{\refname}{Literaturverzeichnis}								% Literaturverzeichnis statt Literatur als Überschrift verwenden
+	\bibliography{bib/Literatur} % nutzt Angaben in der Datei "Literatur.bib"
+	
+	
+	% Anhang
+	% ------
+	\clearpage
+	\input{tex/Anhang.tex}
+	
+	
+	% Eidesstattliche Versicherung
+	% ----------------------------
+	\input{tex/EidesstattlicheVersicherung.tex}
+
+	
+	
+	
+% ***********************************************
+\end{document}
+% ***********************************************

@@ -1,0 +1,268 @@
+% !TeX spellcheck = de_DE
+
+%  ******************************************************************************
+%  * @file		tex/preamble                 							        *
+%  * @author	Mario Hesse                       								*
+%  * @version	v0.1.0                            								*
+%  * @date		31.01.2019                        								*
+%  ******************************************************************************
+
+
+% Dokument / Seiten
+% -----------------
+\documentclass[12pt,a4paper,parskip=full+]{scrartcl}
+\usepackage[utf8]{inputenc}				% Zeichencodierung
+\usepackage[ngerman,english]{babel}				% Sprachpaket Deutsch ausgewählt
+\selectlanguage{ngerman}		% Sprache auf Deutsch gesetzt
+\usepackage[T1]{fontenc}				% Umlaute bei \hyphenation verwenden können (Silbentrennung)
+\usepackage[onehalfspacing]{setspace}	% Setzt das Dokument auf 1,5x Zeilenabstand (singlespacing/onehalfspacing/doublespacing)
+\usepackage[headsepline]{scrlayer-scrpage}		% Kopfzeile
+\usepackage[defaultlines=4,all]{nowidow}				% Schusterjungen und Hurenkinder
+\usepackage{							% standard Krempel
+	amsmath,							% American Mathematical Society - Mathematik Basics (equation, equation*, align, align*, 
+										% gather, gather*, flalign, flalign*, multline, multline*, alignat, alignat*, ...)
+	amsfonts,							% Schriftarten für Mathematik und spezielle Symbole
+	amsthm,								% erlaubt die Definiton von Theoremen
+	amssymb}							% Mathematische Zeichen und Symbole
+
+
+
+% Korrektur- und Dokumentatitonswerkzeuge
+% ---------------------------------------
+\usepackage{comment}					% Erlaubt das Verwenden der Umgebung \begin{comment}...\end{comment} -> Erstellen von Kommentaren über mehrere Zeilen
+\usepackage[ngerman,
+			disable,
+%			textwidth=5cm,
+			textsize=tiny,
+			colorinlistoftodos,
+			]{todonotes}				% Erlaubt das Verwenden von ToDo-Notitzen -> \todo{...} und Blindbildern -> \missingfigure{...}
+
+\usepackage[ngerman]{translator}		% Erlaubt anderen Paketen Begriffe in Deutsche zu Übersetzen (Figure -> Abbildung, Table -> Tabelle, etc.)
+
+\setlength{\headheight}{1.1\baselineskip}
+\newcommand{\mario}[2][]{\todo[color=green,#1]{\textbf{mh:} #2}}
+%\newcommand{\korrektor1}[1]{\todo[color=blue!40]{\textbf{ug:} #1}}
+\newcommand{\wolfgang}[2][]{\todo[color=purple!30,#1]{\textbf{wv:} #2}}
+
+
+% Gleitumgebungen / Grafiken
+% --------------------------
+\usepackage{float}						% notwendig für Gleitubgebungen z.B. Figure
+\usepackage{subfig}						% erlaubt das Verwenden von Subfigures
+\usepackage{graphicx}					% erlaubt das Einbinden von Grafiken
+\usepackage{pdfpages}					% ermöglicht das Einbinden von PDFs
+\usepackage{epstopdf}					% einbinden von eps Bilddateien
+\usepackage{afterpage}					% Im­ple­ments a com­mand that causes the com­mands spec­i­fied in its ar­gu­ment to be ex­panded af­ter the cur­rent page is out­put
+\usepackage{tabularx}					% ermöglicht Tabbellen mit konkreter Breite festzulegen und erlaubt Zeilenumbruch in einer Tabelle
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} 	% linksbündig mit Breitenangabe -> L{BREITE} statt p{BREITE} möglich
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} 	% zentriert mit Breitenangabe -> C{BREITE} statt p{BREITE} möglich
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}} 	% rechtsbündig mit Breitenangabe -> R{BREITE} statt p{BREITE} möglich
+\newcolumntype{Y}{>{\centering\arraybackslash}X}			% X Spalten zentrieren
+\newcolumntype{Z}{>{\raggedleft\arraybackslash}X}			% X Spalten zentrieren
+
+
+
+\newcommand{\ltab}{\raggedright\arraybackslash} 	% Tabellenabschnitt linksbündig -> \ltab
+\newcommand{\ctab}{\centering\arraybackslash} 		% Tabellenabschnitt zentriert -> \ctab 
+\newcommand{\rtab}{\raggedleft\arraybackslash} 		% Tabellenabschnitt rechtsbündig -> \rtab
+
+
+\usepackage{longtable}					% lange Tabellen verarbeiten
+\usepackage{caption}					% ermöglicht die Beschriftung von Gleitobjekten
+\usepackage{nameref}					% erlaubt Namensreferenzen
+\usepackage{wrapfig}                    % Text umschließt Figure
+
+\usepackage{forest}						% erlaubt einfache Verzeichnisstrukturen (tree)
+
+% Diagramme
+% ---------
+\usepackage{tikz}						% Zeichentool
+\usepackage{pgfplots, pgfplotstable}	% Diagramme zeichnen
+\pgfplotsset{compat = newest}			% Einstellung für Diagramme
+\usepackage[binary-units]{siunitx}      % SI-Einheiten
+\usepgfplotslibrary{units}				% Einheiten in Diagrammen plotten
+
+
+% Verzeichnisse
+% -------------
+\usepackage[
+%	super,
+	square,
+	numbers
+	]{natbib}	% Literatur zitieren
+\bibliographystyle{IEEEtranN}				% Literatur- und Zitatstyle | Alternativen: dinat, abbrvdin, alphadin (DIN1505), plaindin (DIN1505), natdin, plain, abbrv, alpha, IEEEtran, IEEEtranN, IEEEtranSN, IEEEtranSA | Eigenen Style auf Konsole erzeugen: latex makebst |
+
+
+% Inhaltsverzeichnis
+\usepackage{makeidx}					% anlegen eines automatischen Inhaltsverzeichnis
+\usepackage{tocstyle}					% Inhaltsverzeichnis
+\usetocstyle{allwithdot} 				% Punkte im Inhaltsverzeichnis
+\setcounter{tocdepth}{2}				% Inhaltsverzeichnis Ebenen definieren, zB bis zu Subsection
+
+
+% Verlinkungen
+% ------------
+\usepackage[							% Verlinkung aller sections, ref , url, etc.
+	pdfborderstyle={/S/U/W 1}				% Ändert den Rahmen der Links in Unterstriche
+	% colorlinks=true,						% Schaltet Rahmen um die Links aus und ändert statt dessen die Schriftfarbe
+	% urlcolor=blue,						% URL Links: Blau
+	% citecolor=black,						% Zitate: Schwarz
+	% linkcolor=black
+	]{hyperref}		
+\hypersetup{								% Erweiterte Einstellungen zu "hyperref" und erlaubt \autoref ()ist ähnlich wie \ref, schreibt aber Abbildung, Tabelle, usw. vor die verlinkte Gleitumgebung)
+	bookmarks=true,							% Zeigt die Lesezeichenleiste an oder nicht.
+	unicode=false,							% Ermöglicht die Verwendung von nicht-latin Schriftzeichen
+	pdftoolbar=true,						% Setzt den Rahmen um einen Link. {0 0 0}erzeugt keinen Rahmen
+	pdfmenubar=true,						% Zeigt die Acrobat-Toolbar an oder versteckt sie.
+	pdffitwindow=false,						% Zeigt das Acrobat-Menü an oder versteckt es.
+	pdfstartview={FitH},					% Verändert die Größe des Acrobat-Anzeigefensters, damit das Dokument hineinpasst.
+	pdftitle={Exposé zur Promotion: Intelligentes Plasma},						% Definiert den Titel des Dokumentes, welcher in der Dokumenteninfo von Acrobat angezeigt wird.
+	pdfauthor={Mario Hesse},						% Definiert den Namen des Autors für die Dokumenteninfo.
+	pdfsubject={},					% Beschreibung des Dokument für die Dokumenteninfo.
+	pdfcreator={Mario Hesse},				% Ersteller des Dokuments für die Dokumenteninfo.
+	pdfproducer={Mario Hesse},							% Produzent des Dokuments für die Dokumenteninfo.
+	pdfkeywords={Intelligentes Plasma} {Kaltes Plasma} {Atmosphärendruck Plasma} {DBD Plasma} {Plasma Regelung} {Plasma Steuerung} {Plasma Automation} {Hochschule für angewandte Wissenschaft und Kunst} {HAWK} {Plasma for Life} {Göttingen},		% Schlüsselwörter des Dokuments für die Dokumenteninfo (durch geschweifte Klammern voneinander getrennt; siehe unten).
+	pdfnewwindow=true,						% Legt fest, dass Links in einem neuen Fenster geöffnet werden sollen.
+	colorlinks=false,						% Legt fest, ob ein farbiger Rahmen um die Links gezogen werden soll oder ob die Schrift farbig sein soll.
+	linkcolor=red,							% Farbe für die Links.
+	citecolor=green,						% Farbe für die Quelllinks (bibliography; Quellenverzeichnis).
+	filecolor=magenta,						% Farbe für Dateilinks.
+	urlcolor=cyan							% Farbe für URL-Links (Web, Mail).
+}
+
+\renewcaptionname{ngerman}\sectionautorefname{Kapitel}			% Ändern von \autoref(section): Abschnitt 			-> Abschnitt
+\renewcaptionname{ngerman}\subsectionautorefname{Kapitel}			% Ändern von \autoref(section): Unterabschnitt 		-> Abschnitt
+\renewcaptionname{ngerman}\subsubsectionautorefname{Kapitel}		% Ändern von \autoref(section): Unterunterabschnitt	-> Abschnitt
+\newcommand{\subfigureautorefname}{\figureautorefname}		% Ändern von \autoref(subfloat): ~	-> tt
+
+\usepackage{cleveref}						% Muss nach \hypreref geladen werden (!) \cref ist ähnlich wie \ref, schreibt aber Abb., Tab., usw. vor die verlinkte Gleitumgebung
+
+
+% Glossar, Abkürzungsverzeichnis, Symbolverzeichnis, etc.
+% -------------------------------------------------------
+\usepackage[nonumberlist, 											% keine Seitenzahlen anzeigen
+			acronym,      											% ein Abkürzungsverzeichnis erstellen
+			toc,          											% Einträge im Inhaltsverzeichnis
+			section      											% im Inhaltsverzeichnis auf section-Ebene erscheinen
+			]{glossaries}										% Erlaubt Glossar, Abkürzungsverzeichnis, Symbolverzeichnis und mehr...
+\newglossary[slg]{symbolslist}{syi}{syg}{Symbolverzeichnis}		% Ein eigenes Symbolverzeichnis erstellen
+\renewcommand*{\glspostdescription}{}							% Den Punkt am Ende jeder Beschreibung deaktivieren
+\newcommand{\glsit}[1]{\textit{\gls{#1}}}						% Neues Kommando \glsit{} = \gls{} mit Link als kursivem Text
+\newcommand{\glspit}[1]{\textit{\glspl{#1}}}					% Neues Kommando \glsplit{} = \glpl{} mit Link als kursivem Text
+\makeglossaries													% Glossar-Befehle anschalten
+
+
+% Formatierungen
+% --------------
+\usepackage{abstract}					% erlaubt des Verwenden der standartisierten Vorlage für Abstracts ( \begin{abstract}...\end{abstract} )
+\addto\captionsngerman{%				% benennt den deutschen Titel des Abstracts von 'Zusammenfassung' um in 'Kurzfassung' 
+	\renewcommand{\abstractname}{Kurzfassung}}
+\usepackage{enumitem}					% ermöglicht das Einstellen von Abständen in itemize Umgebungen -> \setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt} (global) oder begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt] (lokal) und erlaubt das Verwenden der {enumitem} Umgebung (itemize mit geringeren Abständen)
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+\usepackage{eurosym}					% €-Zeichen mit \euro darstellbar oder durch \EUR{betrag}
+\usepackage{fdsymbol}					% Symboltabelle mit \hateq (Entspricht Symbol)
+\usepackage{romannum}					% Römische Nummern schreiben mit '\romannum{integer}'
+\newcommand{\Rom}[1]{\uppercase\expandafter{\romannumeral #1\relax}}		% Römische Nummern schreiben mit '\Rom{integer}' (nötig für Verwendung in \section{})
+\usepackage{textgreek}					% Erlaubt grichische Buchstaben im Text mit \textalpha, \textbeta, ...
+
+\setlength{\parindent}{0in} 			% Absatz, erste Zeile wird global NICHT eingerückt
+%\usepackage{parskip}					% setzt einen Abstand nach einem \par Absatz
+\usepackage{rotating}					% erlaubt das rotieren eines Elements
+\newcommand\tabrotate[1]{\begin{turn}{90}\rlap{#1}\end{turn}}	% kurzbefehl für das Rotieren eines Elements
+
+\usepackage{multirow}					% erlaubt in Tabellen das Zusammenfassen von Zellen in Reihe
+\usepackage{booktabs}					% erlaubt mehrere unterschiedliche Linien in Tabellen (\toprule, \midrule, \bottomrule)
+\usepackage{hhline}						% erlaubt individuelle Dicke bei Tabellenlinien
+
+\usepackage{csquotes}
+\newcommand{\gqt}[1]{\glqq #1\grqq{}}	% \gqt{...} (german quotation) ist eine Umgebung für deutsche Anführungszeichen | Alternativen: dirtytalk, csquotes, epigraph
+
+% Custom colors
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}	% definiert ein tiefes Blau
+\definecolor{deepred}{rgb}{0.6,0,0}		% definiert ein tiefes Rot
+\definecolor{deepgreen}{rgb}{0,0.5,0}	% definiert ein tiefes Grün
+
+
+\usepackage{wasysym}					% zusätzliche Symbole verwenden (Checkbox)
+\usepackage{listings}					% ermölgicht Zeichengenaues Zitieren (für Programmcode) \verb|Zitat|
+
+
+% Silbentrennung
+%\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks\do\a		% Erlaubt einen Umbruch in einer URL 
+%	\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n	% an allen angegebenen Stellen
+%	\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z\do\A	
+%	\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N	
+%	\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z\do\1
+%	\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9\do\0\do\&}
+\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks
+	\do.\do-\do:}													% nur an markanten Stellen
+
+%\sloppy								% Nachlässige Silbentrennung, Blocksatzoptimiert
+\hyphenation{OpenOCD To-po-lo-gie-in-for-ma-ti-onen Fer-ti-gungs-au-to-ma-ti-on Kom-mu-ni-ka-tions-ein-heit CANopen-Kom-mu-ni-ka-tions-ein-heit Atmos-phä-ren-druck ei-des-statt-li-ch UART USART El-ek-tro-den-an-ord-nung Mi-kro-plas-ma-zel-len Mi-kro-plas-ma-zel-len}					% Worte, die NICHT oder nur auf bestimmte Weise getrennt werden sollen
+
+% \itemize mit Überschrift
+\newenvironment{titlemize}[1]{
+	\paragraph{#1}
+	\begin{itemize}}
+	{\end{itemize}}
+
+% \paragraph mit Zeilenumbruch versehen 
+% -begin-----------------------------------------------------------
+\makeatletter
+\renewcommand\paragraph{
+	\@startsection{paragraph}{4}{\z@}
+	{-3.25ex\@plus -1ex \@minus -.2ex}			% Raum vor \paragraph
+	{1.5ex \@plus .2ex}							% Raum nach \paragraph
+	{\normalfont\normalsize\bfseries}			% Text unter \paragraph
+}
+\makeatother
+% -end-------------------------------------------------------------
+
+
+% Python
+% -begin----------------------------------------------------------
+% Include Python-Programmcode with Syntax-Highlighting
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{11} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{11}  % for normal
+
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\ttm,
+otherkeywords={self},             % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=tb,                         % Any extra options here
+showstringspaces=false            % 
+}}
+
+
+\lstnewenvironment{python}[1][]		% Python environment
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+
+% Python for external files
+\newcommand\pythonexternal[2][]{{
+\pythonstyle
+\lstinputlisting[#1]{#2}}}
+
+% Python for inline
+\newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
+% -end------------------------------------------------------------
+
+
+% Citation aliases
+%\defcitealias{2011IndustrialEthernetFacts}{Industrial Ethernet Facts [2011]}
+
+
+
+% Fehler bekämpfen
+\pdfoptionpdfminorversion=7

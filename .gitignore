@@ -1,3 +1,7 @@
+## Mario's ungeliebte
+chapter/old/
+bib/source/
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
@@ -19,6 +23,9 @@
 # *.eps
 # *.pdf
 
+## Generated if empty string is given at "Please type another file name for output:"
+.pdf
+
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
 *.bcf
@@ -31,6 +38,7 @@
 ## Build tool auxiliary files:
 *.fdb_latexmk
 *.synctex
+*.synctex(busy)
 *.synctex.gz
 *.synctex.gz(busy)
 *.pdfsync
@@ -84,6 +92,10 @@ acs-*.bib
 # gnuplottex
 *-gnuplottex-*
 
+# gregoriotex
+*.gaux
+*.gtex
+
 # hyperref
 *.brf
 
@@ -128,6 +140,9 @@ _minted*
 *.sagetex.py
 *.sagetex.scmd
 
+# scrwfile
+*.wrt
+
 # sympy
 *.sout
 *.sympy
@@ -151,6 +166,9 @@ pythontex-files-*/
 
 # todonotes
 *.tdo
+
+# easy-todo
+*.lod
 
 # xindy
 *.xdy
@@ -178,3 +196,14 @@ TSWLatexianTemp*
 
 # KBibTeX
 *~[0-9]*
+
+# auto folder when using emacs and auctex 
+/auto/*
+
+main.slg
+main.syg
+main.syi
+Masterarbeit-MH-2017.pdf
+*.syi
+*.syg
+*.slg

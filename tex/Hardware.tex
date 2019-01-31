@@ -1,0 +1,26 @@
+% !TeX spellcheck = de_DE
+
+%  ******************************************************************************
+%  * @file		tex/Hardware                 							        *
+%  * @author	Mario Hesse                       								*
+%  * @version	v0.1.0                            								*
+%  * @date		31.01.2019                        								*
+%  ******************************************************************************
+
+\section{Hardware} \label{sec:Hardware}
+
+Hier wird die Hardware beschrieben. Dazu könnten Tabellen wie \autoref{tab:DieErsteTabelle} nützlich sein.
+		
+		
+\begin{table}[htbp]
+	\centering																	% zentriert die Tabelle
+	\caption{Die erste Tabelle}													% Tabellenbezeichnung (Taucht im Tabellenverzeichnis auf)
+	\label{tab:DieErsteTabelle}													% Label mit dem auf die Tabelle verwiesen werden kann
+	\begin{tabular}{l|c|r}														% Die Tabellen Spalten werden mit l,c oder r als linkbündig, zentriert oder rechtsbündig definiert; soviele Buchstaben wie geschrieben wurden, soviele Spalten existieren
+		links angeordnet	& zentriert angeordnet	& rechts angeordnet \\ 		% Tabelleneinträge werden durch ein "&" getrennt und jede Reihe wird duch "\\" abgeschlossen
+		\hline 																	% Erzeugt eine horizontale Linie
+		links 				& zentriert 			& rechts \\					% Weitere Reihen schreibt man im gleichen Stil darunter
+		l 					& z			 			& r \\					% Weitere Reihen schreibt man im gleichen Stil darunter
+		
+	\end{tabular}
+\end{table}
