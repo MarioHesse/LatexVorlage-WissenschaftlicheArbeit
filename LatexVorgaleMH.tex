@@ -1,52 +1,58 @@
 % !TeX spellcheck = de_DE
 
 %  ******************************************************************************
-%  * @file		LatexVorlageMH              									*
-%  * @author	Mario Hesse                										*
-%  * @version	v2.0.0                    										*
-%  * @date		31.01.2019                 										*
-%  * @brief		Vorlage für wissenschaftliche Arbeiten.                         *
-%  *			Erstellt von Mario Hesse		                                *
-%  *			                        		                                *
-%  *			Alle Kapitel, die Präambel, Bilder, Literatur, etc. sind in     *
+%  * @file      LatexVorlageMH                                                  *
+%  * @author    Mario Hesse                                                     *
+%  * @version   v2.0.1                                                          *
+%  * @date      31.01.2019                                                      *
+%  * @brief     Vorlage für wissenschaftliche Arbeiten.                         *
+%  *            Erstellt von Mario Hesse                                        *
+%  *                                                                            *
+%  *            Alle Kapitel, die Präambel, Bilder, Literatur, etc. sind in     *
 %  *            einzelnen Ordnern hinterlegt. Dadurch entsteht mehr Übersicht   *
 %  *            und Ordnung.                                                    *
-%  *			  - Präambel:   /tex/                                           *
-%  *			  - Glossar:    /tex/                                           *
-%  *			  - Kapitel:    /tex/                                           *
-%  *			  - Bilder:     /pic/                                           *
-%  *			  - Daten:      /dat/                                           *
-%  *			  - Anhang:     /app/                                           *
+%  *              - Präambel:   /tex/                                           *
+%  *              - Glossar:    /tex/                                           *
+%  *              - Kapitel:    /tex/                                           *
+%  *              - Bilder:     /pic/                                           *
+%  *              - Daten:      /dat/                                           *
+%  *              - Anhang:     /app/                                           *
 %  ******************************************************************************
 
-% Hilfsdatei aufräumen - Endungen
-% log,aux,dvi,lof,lot,bit,idx,glo,bbl,bcf,ilg,toc,ind,out,blg,fdb_latexmk,fls,acn,acr,alg,glg,gls,ist,slg,syg,syi,synctex.gz,tdo
+% Alle Dateien mit den nachfolgenden Endungen sind Hilfsdateien und können regelmäßig gelöscht werden. Dadurch können Fehlerhafte Dokumente oft wieder Lauffähig werden. 
+% log, aux, dvi, lof, lot, bit, idx, glo, bbl, bcf, ilg, toc, ind, out, blg, fdb_latexmk, fls, acn, acr, alg, glg, gls, ist, slg, syg, syi, synctex.gz, tdo
 
 
 \input{tex/preamble.tex}
 
 %\input{tex/Glossaries.tex}												% Paket Glossaries erstellt ein Glossar, Abkürzungsverzeichnisse und Formelverzeichnisse: Für Fortgeschrittene Benutzer
 
-% ***********************************************
+% ******************************************************************************
 \begin{document}
-% ***********************************************
-	\selectlanguage{ngerman}
+% ******************************************************************************
+	\selectlanguage{ngerman}													% Sprache für Makros: Deutsch
 	
+	
+	% Einstellen der Kopf- und Fußzeile
+	% ---------------------------------
 	\ohead{\pagemark}
 	\ihead{\sectionmark}
 	\cfoot{}
 	\pagestyle{scrheadings}
 	\renewcommand{\sectionmark}[1]{\markright{#1}{}}
 	
+	
 	% ToDo Liste
 	% ----------
-	\listoftodos
+	\listoftodos																% mit \todo{} können Randnotizen erstellt werden. Alle Randnotizen werden in der "List of Todos" an dieser Stelle angezeigt.
 	
 	% Titelseite
 	% ----------
 	\input{tex/Deckblatt.tex}
 
-	% Vorspiel --------------------------------------------------------------------------------------------------------------------------------------------
+	% **************************************************************************
+	% Vorspiel
+	% **************************************************************************
 	\pagenumbering{arabic}          
 
 	
@@ -75,7 +81,7 @@
 	\input{tex/Danksagung.tex}
 	
 	
-%	% Vorwort														% Optionales Kapitel
+%	% Vorwort																	% Optionales Kapitel
 %	% -------
 %	\clearpage 
 %	\phantomsection
@@ -90,8 +96,10 @@
 	\addcontentsline{toc}{section}{Kurzfassung und Abstract}
 	\input{tex/Kurzfassung.tex}
 	
-	
-	% Verzeichnisse ----------------------------------------------------------------------------------------------------------------------------------------
+
+	% **************************************************************************
+	% Verzeichnisse
+	% **************************************************************************
 	
 	% Inhaltsverzeichnis
 	% ------------------
@@ -117,7 +125,7 @@
 	\listoftables
 	
 	
-%	% Glossarie Verzeichnisse										% Paket Glossaries erstellt ein Glossar, Abkürzungsverzeichnisse und Formelverzeichnisse: Für Fortgeschrittene Benutzer
+%	% Glossarie Verzeichnisse													% Paket Glossaries erstellt ein Glossar, Abkürzungsverzeichnisse und Formelverzeichnisse: Für Fortgeschrittene Benutzer
 %	% -----------------------
 %	% Glossar ausgeben
 %	\clearpage
@@ -133,9 +141,10 @@
 	
 	
 	
-	
-	% Dokumententext --------------------------------------------------------------------------------------------------------------------------------------
-	\setcounter{table}{0}											% Tabellenzähler wird auf 0 gesetzt (Falls vorher schon eine Tabelle genutzt wurde)
+	% **************************************************************************
+	% Dokumententext 
+	% **************************************************************************
+	\setcounter{table}{0}														% Tabellenzähler wird auf 0 gesetzt (Falls vorher schon eine Tabelle genutzt wurde)
 	
 	
 	% Einleitung
@@ -175,9 +184,10 @@
 	\clearpage
 	\input{tex/Diskussion.tex}
 	
-	
-	% Abspann ----------------------------------------------------------------------------------------------------------------------------------------------
-	
+
+	% **************************************************************************
+	% Abspann
+	% **************************************************************************
 	
 	% Literatur
 	% ---------
@@ -186,7 +196,7 @@
 	\addcontentsline{toc}{section}{Literaturverzeichnis}
 	\sectionmark{Literaturverzeichnis}
 	\renewcommand{\refname}{Literaturverzeichnis}								% Literaturverzeichnis statt Literatur als Überschrift verwenden
-	\bibliography{bib/Literatur} % nutzt Angaben in der Datei "Literatur.bib"
+	\bibliography{bib/Literatur} 												% nutzt Angaben in der Datei "bib/Literatur.bib" um ein Literaturverzeichnis zu erstellen
 	
 	
 	% Anhang
