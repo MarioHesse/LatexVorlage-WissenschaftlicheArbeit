@@ -8,6 +8,9 @@ Bei diesem Repo handelt es sich um eine umfangreiche Latex Vorlage für wissensc
 * Im [Wiki](https://github.com/HansAchterbahn/LatexVorlage-WissenschaftlicheArbeit/wiki) dieses Projekts kann man Tipps zum wissenschaftlichen Schreiben und zum Umgang mit Latex finden.
 * Im [Release](https://github.com/HansAchterbahn/LatexVorlage-WissenschaftlicheArbeit/releases) Bereich kann die aktuelle Version der Vorlage als [_Basic_](https://github.com/HansAchterbahn/LatexVorlage-WissenschaftlicheArbeit/archive/v2.0-Basic.zip) für Latex Anfänger und als [_Advanced_](https://github.com/HansAchterbahn/LatexVorlage-WissenschaftlicheArbeit/archive/v2.0-Advanced.zip) für Latex Fortgeschrittene heruntergeladen werden.
 
+_Viel Freude beim Latex tippen und Wissen schaffen!_  
+_Latex ❤ Wissenschaft_ 
+
 
 ## Inhalt und Struktur
 
