@@ -1,8 +1,25 @@
 # LatexVorlage-WissenschaftlicheArbeit
 
+
 ## Allgemein
 
-Bei diesem Repo handelt es sich um eine umfangreiche Latex Vorlage für wissenschaftliche Arbeiten. Sie ist für den Bereich Elektrotechnik geschrieben, lässt sicher aber einfach an andere technische und naturwissenschaftliche Bereiche anpassen. Im Wiki dieses Projekts kann man Tipps zum wissenschaftlichen Schreiben und zum Umgang mit Latex finden.
+Bei diesem Repo handelt es sich um eine umfangreiche Latex Vorlage für wissenschaftliche Arbeiten. Sie ist für den Bereich Elektrotechnik geschrieben, lässt aber einfach an andere technische und naturwissenschaftliche Bereiche anpassen. Im [Wiki](https://github.com/HansAchterbahn/LatexVorlage-WissenschaftlicheArbeit/wiki) dieses Projekts kann man Tipps zum wissenschaftlichen Schreiben und zum Umgang mit Latex finden.
+
+
+## Inhalt und Struktur
+
+|Ordner/Datei       | Kurz                                  | Erklärung                                                         |
+|-------------------|:-------------------------------------:|-------------------------------------------------------------------|
+| app/              | __[ Appendix / Anhang ]__             | Ordner für Dokumente, die in den Anhang gehören                   |
+| bib/              | __[ Bibliography / Literaturliste ]__ | Ordner für die Literatur Datei(en)                                |
+| pic/              | __[ Picture / Abbildung ]__           | Ordner für Abbildungen                                            |
+| tex/              | __[ Latex Dokumente ]__               | Ordner für Ausgelagerte Kapitel im TEX-Format                     |
+| .gitignore        | __[ GIT Datei ]__                     | Erlaubt das Ausschließen von Dateien von der Versionierung        |
+| LICENSE.md        | __[ Lizenz ]__                        | CC0 1.0 Universal                                                 |
+| LatexVorlageMH.pdf| __[ Generiertes PDF ]__               | Dieses PDF Dokument entsteht beim generieren dieser Latex Vorlage |
+| LatexVorlageMH.tex| __[ TEX Hauptdokument ]__             | Das ist das Latex Ursprungsdokument (root)                        |
+| README.md         | __[ Info Datei ]__                    | Diese Datei enthält Informationen zu diesem Projekt.              |
+
 
 ## Lizenz
 
