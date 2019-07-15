@@ -2,7 +2,7 @@
 
 ## Allgemein
 
-Bei diesem Repo handelt es sich um eine umfangreiche Latex Vorlage f?r wissenschaftliche Arbeiten. Sie ist f?r den Bereich Elektrotechnik geschrieben, l?sst sicher aber einfach f?r andere technische und naturwissenschaftliche Bereiche anpassen. Im Wiki dieses Projekts kann man Tipps zum wissenschaftlichen Schreiben und zum Umgang mit Latex finden.
+Bei diesem Repo handelt es sich um eine umfangreiche Latex Vorlage für wissenschaftliche Arbeiten. Sie ist für den Bereich Elektrotechnik geschrieben, lässt sicher aber einfach an andere technische und naturwissenschaftliche Bereiche anpassen. Im Wiki dieses Projekts kann man Tipps zum wissenschaftlichen Schreiben und zum Umgang mit Latex finden.
 
 ## Lizenz
 
