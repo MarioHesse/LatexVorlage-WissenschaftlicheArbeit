@@ -19,10 +19,10 @@ _Latex ❤ Wissenschaft_
 | app/              | __[ Appendix / Anhang ]__             | Ordner für Dokumente, die in den Anhang gehören                   |
 | bib/              | __[ Bibliography / Literaturliste ]__ | Ordner für die Literatur Datei(en)                                |
 | pic/              | __[ Picture / Abbildung ]__           | Ordner für Abbildungen                                            |
-| tex/              | __[ Latex Dokumente ]__               | Ordner für Ausgelagerte Kapitel im TEX-Format                     |
+| tex/              | __[ Latex Dokumente ]__               | Ordner für ausgelagerte Kapitel im TEX-Format                     |
 | .gitignore        | __[ GIT Datei ]__                     | Erlaubt das Ausschließen von Dateien von der Versionierung        |
 | LICENSE.md        | __[ Lizenz ]__                        | CC0 1.0 Universal                                                 |
-| LatexVorlageMH.pdf| __[ Generiertes PDF ]__               | Dieses PDF Dokument entsteht beim generieren dieser Latex Vorlage |
+| LatexVorlageMH.pdf| __[ Generiertes PDF ]__               | Dieses PDF Dokument entsteht beim Generieren dieser Latex Vorlage |
 | LatexVorlageMH.tex| __[ TEX Hauptdokument ]__             | Das ist das Latex Ursprungsdokument (root)                        |
 | README.md         | __[ Info Datei ]__                    | Diese Datei enthält Informationen zu diesem Projekt.              |
 
