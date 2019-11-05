@@ -3,8 +3,8 @@
 %  ******************************************************************************
 %  * @file      tex/preamble                                                    *
 %  * @author    Mario Hesse                                                     *
-%  * @version   v0.1.0                                                          *
-%  * @date      31.01.2019                                                      *
+%  * @version   v0.1.1                                                          *
+%  * @date      16.10.2019                                                      *
 %  ******************************************************************************
 
 
@@ -104,6 +104,7 @@ pdfborderstyle={/S/U/W 1}														% ändert den Rahmen der Links in Unterst
 \usepackage{epstopdf}															% erlaubt das Einbinden von EPS-Bilddateien
 \usepackage{afterpage}															% erlaubt einen Punkt zu definieren, an dem alle bisherigen Floats gezeichnet sein müssen | Anwendung: \afterpage{\clearpage}
 \usepackage{listings}															% ermöglicht zeichengenaues Zitieren (für Programmcode) \verb|Zitat|
+	\renewcommand{\lstlistingname}{Quelltext}    								% Caption von "Listening" auf "Code" ändern
 \usepackage{caption}															% ermöglicht die Beschriftung von Gleitobjekten (Floats)
 \usepackage{nameref}															% erlaubt Namensreferenzen
 
@@ -236,10 +237,40 @@ pdfborderstyle={/S/U/W 1}														% ändert den Rahmen der Links in Unterst
 
 % Custom colors
 % -------------
-\usepackage{color}
+\usepackage{xcolor}
 \definecolor{deepblue}{rgb}{0,0,0.5}											% definiert ein tiefes Blau
 \definecolor{deepred}{rgb}{0.6,0,0}												% definiert ein tiefes Rot
 \definecolor{deepgreen}{rgb}{0,0.5,0}											% definiert ein tiefes Grün
+
+% Wird für Quelltexte verwendet
+\definecolor{codegreen}{rgb}{0,0.6,0}											% Farbe "codegreen" wird definiert
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}										% Farbe "codegrey" wird definiert
+\definecolor{codepurple}{rgb}{0.58,0,0.82}										% Farbe "codepurple" wird definiert
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}									% Farbe "backcolour" wird definiert
+
+
+% Definiert einen eigenen Listing Style (Zum einbinden von Quellcode)
+% -------------------------------------------------------------------
+\lstdefinestyle{mystyle}{								% Definition eines eigenen Listing Styles
+	backgroundcolor=\color{backcolour},   				% Hintergrundfarbe
+	commentstyle=\color{codegreen},						% Kommentare
+	keywordstyle=\color{magenta},						% Schlüsselwörter
+	numberstyle=\tiny\color{codegray},					% Zeilennummer
+	stringstyle=\color{codepurple},						% Zeichenketten
+	basicstyle=\ttfamily\footnotesize,					% Normale Schrift
+	breakatwhitespace=true,         					% Umbrechen an Leerzeichen?
+	breaklines=true,                 					% Umbrechen des Text?
+	captionpos=b,                    					% Position der Beschriftung (b=bottom, t=top)
+	keepspaces=true,                 					% Leerzeichen behalten?
+	numbers=left,                    					% Seite der Zeilennummern (l=left, r=right)
+	numbersep=5pt,                  					% Abstand der Zeilennummern vom Code
+	showspaces=false,                					% Leerzeichen anzeigen?
+	showstringspaces=false,								% Leerzeichen in Zeichenketten anzeigen?
+	showtabs=false,                  					% Tabs anzeigen?
+	tabsize=2											% Tab Länge in Leerzeichen
+}
+
+\lstset{style=mystyle}									% Listing Style "mystyle" auswählen
 
 
 % Silbentrennung von URLs

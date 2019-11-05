@@ -3,20 +3,22 @@
 %  ******************************************************************************
 %  * @file      tex/Firmware                                                    *
 %  * @author    Mario Hesse                                                     *
-%  * @version   v0.1.0                                                          *
-%  * @date      31.01.2019                                                      *
+%  * @version   v0.1.1                                                          *
+%  * @date      16.10.2019                                                      *
 %  ******************************************************************************
 
 \section{Firmware}
 	
-Hier wird die Firmware oder Software beschrieben. Bilder von Programmabläufen, wie \autoref{pic:EinErstesBild}, können dabei nützlich sein.
+Hier wird die Firmware oder Software beschrieben. Es ist sinnvoll Abschnitte des Quellcodes im Dokument abzubilden. \autoref{code:C} zeigt, wie das aussehen kann. Diese Abschnitte sollten gut dokumentiert werden, Programmablaufpläne und ähnliches können dabei helfen.
 
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.5\linewidth]{pic/IntelligentesPlasma.pdf}
-	\caption{Ein erstes Bild}
-	\label{pic:EinErstesBild}
-\end{figure}
-	
-	
+\begin{lstlisting}[language=c, caption={C Beispiel}, label=code:C]
+#include <stdio.h>
+
+int main()
+{
+	printf("hello world!");                    
+
+	return 0;
+}
+\end{lstlisting}
