@@ -1,5 +1,11 @@
 # LatexVorlage-WissenschaftlicheArbeit
 
+## Wichtig, Wichtig, Wichtig!
+
+Das Repo ist zu meinem GitLab-Account der GWDG umgezogen.
+https://gitlab.gwdg.de/mario.hesse/latexvorlage-wissenschaftlichearbeit
+
+Hier ist der Stand des Repos vom 12.10.2020 eingefroren. Den aktuellen Stand findest du unter dem Link oben.
 
 ## Allgemein
 
