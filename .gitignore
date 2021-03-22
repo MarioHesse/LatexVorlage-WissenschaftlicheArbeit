@@ -197,13 +197,14 @@ TSWLatexianTemp*
 # KBibTeX
 *~[0-9]*
 
-# auto folder when using emacs and auctex 
+# auto folder when using emacs and auctex
 /auto/*
 
 main.slg
 main.syg
 main.syi
-Masterarbeit-MH-2017.pdf
 *.syi
 *.syg
 *.slg
+*.soc
+*.loc

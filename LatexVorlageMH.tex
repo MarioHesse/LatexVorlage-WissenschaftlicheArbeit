@@ -20,7 +20,7 @@
 %  ******************************************************************************
 
 % Alle Dateien mit den nachfolgenden Endungen sind Hilfsdateien und können regelmäßig gelöscht werden. Dadurch können Fehlerhafte Dokumente oft wieder Lauffähig werden. 
-% log, aux, dvi, lof, lot, bit, idx, glo, bbl, bcf, ilg, toc, ind, out, blg, fdb_latexmk, fls, acn, acr, alg, glg, gls, ist, slg, syg, syi, synctex.gz, tdo
+% log, aux, dvi, lof, lot, bit, idx, glo, bbl, bcf, ilg, toc, ind, out, blg, fdb_latexmk, fls, acn, acr, alg, glg, gls, ist, slg, syg, syi, synctex.gz, tdo, loc, soc
 
 
 \input{tex/preamble.tex}
@@ -190,11 +190,9 @@
 	% ---------
 	\clearpage
 	\phantomsection
-	\addcontentsline{toc}{section}{Literaturverzeichnis}
-	\sectionmark{Literaturverzeichnis}
-	\renewcommand{\refname}{Literaturverzeichnis}								% Literaturverzeichnis statt Literatur als Überschrift verwenden
-	\bibliography{bib/Literatur} 												% nutzt Angaben in der Datei "bib/Literatur.bib" um ein Literaturverzeichnis zu erstellen
-	
+	\addcontentsline{toc}{section}{Literatur}						% Fügt den Eintrag "Literatur" zum Inhaltsverzeichnis hinzu
+	\sectionmark{Literatur}											% Markiert diesen Bereich mit dem Begriff "Literatur" (wichtig für die Kopfzeile)
+	\printbibliography 												% Erstellt eine Literaturverzeichnis auf Basis der in der Preambel festgelegten Optionen
 	
 	% Anhang
 	% ------

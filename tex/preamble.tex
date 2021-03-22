@@ -165,12 +165,12 @@ pdfborderstyle={/S/U/W 1}														% ändert den Rahmen der Links in Unterst
 
 % Literaturverzeichnis
 % --------------------
-\usepackage[																	% Einstellen des Zitierstils im Text
-	numbers,																	% Zitiermarker ist eine Zahl | Alternativen: authoryear
-%	super,																		% Zitiermarker wird hochgestellt 
-	square																		% Zitiermarker wird in viereckigen Klammern angezeigt
-	]{natbib}																	% Literatur zitieren mit Natbib-Paket 
-\bibliographystyle{IEEEtranN}													% Einstellen des Zitierstils im Literaturverzeichnis | Alternativen: dinat, abbrvdin, alphadin (DIN1505), plaindin (DIN1505), natdin, plain, abbrv, alpha, IEEEtran, IEEEtranN, IEEEtranSN, IEEEtranSA | Eigenen Style auf Konsole erzeugen: latex makebst |
+\usepackage[
+	backend=biber,
+	style=ieee,
+	citestyle=numeric
+	]{biblatex}
+\addbibresource{bib/Literatur.bib}
 
 
 % Inhaltsverzeichnis
