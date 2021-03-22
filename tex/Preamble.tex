@@ -177,10 +177,7 @@ pdfborderstyle={/S/U/W 1}														% ändert den Rahmen der Links in Unterst
 
 % Inhaltsverzeichnis
 % ------------------
-\usepackage{tocstyle}															% toc = Table of Content | Paket für Inhaltsverzeichnis (\tableofcontents), Abbildungsverzeichnis (\listoffigures) und Tabellenverzeichnis (\listoftables)
-\usetocstyle{allwithdot} 														% Punkte im Inhaltsverzeichnis
-\setcounter{tocdepth}{2}														% Inhaltsverzeichnis Ebenen definieren | bis zu Section = 1; bis zu Subsection = 2; bis zu Subsubsection = 3
-
+\RedeclareSectionCommands[toclinefill=\dotfill]{section,subsection,subsubsection} % Punkte im Inhaltsverzeichnis als Abstand zur Seitennummer
 
 % Glossar, Abkürzungsverzeichnis, Symbolverzeichnis, etc.
 % -------------------------------------------------------
