@@ -36,7 +36,7 @@ _Latex ❤ Wissenschaft_
   <br />
   To the extent possible under law,
   <a rel="dct:publisher"
-     href="https://github.com/HansAchterbahn/LatexVorlage-WissenschaftlicheArbeit">
+     href="https://www.hawk.de/de/hochschule/organisation-und-personen/personenverzeichnis/mario-hesse">
     <span property="dct:title">Mario Hesse</span></a>
   has waived all copyright and related or neighboring rights to
   <span property="dct:title">Latex Vorlage - Wissenschaftliche Arbeit</span>.
