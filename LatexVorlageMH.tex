@@ -3,8 +3,8 @@
 %  **************************************************************************************
 %  * @file      LatexVorlageMH                                                          *
 %  * @author    Mario Hesse                                                             *
-%  * @version   v2.0.1                                                                  *
-%  * @date      31.01.2019                                                              *
+%  * @version   v2.2                                                                    *
+%  * @date      22.02.2021                                                              *
 %  * @brief     Eine Vorlage für wissenschaftliche Arbeiten an der HAWK Fakultät I      *
 %  *                                                                                    *
 %  *            Diese Vorlage wurde von Mario Hesse erstellt und wird auf GitHub        *
@@ -28,7 +28,11 @@
 
 \input{tex/Preamble.tex}
 
-%\input{tex/Glossaries.tex}												% Paket Glossaries erstellt Glossar, Abkürzungsverzeichnis und Formelverzeichnis: Für Fortgeschrittene Benutzer
+\def\UseGlossaries{Glossar erstellen}										% das Erstellen eines Glossars kann durch auskommentieren dieser Zeile ausgeschaltet werden
+\ifdefined\UseGlossaries													% Glossar wird erstellt, wenn die Variable \UseGlossaries definiert ist (LatexVorlageMH.tex: Zeile 31)
+	\input{tex/Glossaries.tex}												% Paket Glossaries erstellt Glossar, Abkürzungsverzeichnis und Formelverzeichnis: Für Fortgeschrittene Benutzer
+\fi
+
 
 % ******************************************************************************
 \begin{document}
@@ -126,20 +130,21 @@
 	\addcontentsline{toc}{section}{Tabellenverzeichnis}
 	\listoftables
 	
-	
+
+\ifdefined\UseGlossaries												% Glossar wird erstellt, wenn die Variable \UseGlossaries definiert ist (LatexVorlageMH.tex: Zeile 31)
 %	% Glossarie Verzeichnisse											% Paket Glossaries erstellt ein Glossar, Abkürzungsverzeichnisse und Formelverzeichnisse: Für Fortgeschrittene Benutzer
-%	% -----------------------
-%	\clearpage
-%	\printglossary[style=altlist,title=Glossar]
-%	
-%	% Abkürzungen ausgeben
-%	\clearpage
-%	\printglossary[type=\acronymtype,title=Abkürzungsverzeichnis,style=long]
-%	
-%	% Symbole ausgeben
-%	\clearpage
-%	\printglossary[type=symbolslist,style=long]
+	% -----------------------
+	\clearpage
+	\printglossary[style=altlist,title=Glossar]
 	
+	% Abkürzungen ausgeben
+	\clearpage
+	\printglossary[type=\acronymtype,title=Abkürzungsverzeichnis,style=long]
+	
+	% Symbole ausgeben
+	\clearpage
+	\printglossary[type=symbolslist,style=long]
+\fi
 	
 	
 	% **************************************************************************
